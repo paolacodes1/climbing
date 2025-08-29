@@ -75,7 +75,7 @@ export function GymSelector() {
             value={selectedGym?.toString() || ''} 
             onValueChange={(value) => setSelectedGym(parseInt(value))}
           >
-            <SelectTrigger className="w-full min-w-[250px] h-auto py-3 px-4">
+            <SelectTrigger className="w-full min-w-[250px] h-auto py-4 px-4">
               <SelectValue placeholder="Choose a gym to start logging climbs" />
             </SelectTrigger>
             <SelectContent>
@@ -94,14 +94,6 @@ export function GymSelector() {
             </SelectContent>
           </Select>
 
-          {selectedGymInfo && (
-            <div className="mt-3 p-3 bg-secondary/20 border border-secondary/30 rounded-lg">
-              <div className="text-sm font-medium text-secondary-foreground">
-                Selected: {selectedGymInfo.name}
-              </div>
-              <div className="text-xs text-muted-foreground">{selectedGymInfo.location}</div>
-            </div>
-          )}
         </CardContent>
       </Card>
 

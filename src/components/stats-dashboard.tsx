@@ -219,7 +219,7 @@ export function StatsDashboard() {
             <CardTitle>Route Type Analysis</CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="grid grid-cols-1 gap-4">
+            <div className="space-y-6">
               <ResponsiveContainer width="100%" height={200}>
                 <PieChart>
                   <Pie
@@ -239,17 +239,17 @@ export function StatsDashboard() {
                 </PieChart>
               </ResponsiveContainer>
               
-              <div className="space-y-3">
+              <div className="space-y-4 pt-2">
                 {routeTypeChartData.map((item, index) => (
-                  <div key={item.name} className="flex items-center justify-between py-1">
-                    <div className="flex items-center gap-3">
+                  <div key={item.name} className="flex items-center justify-between py-2 px-1">
+                    <div className="flex items-center gap-4">
                       <div 
-                        className="w-3 h-3 rounded-full flex-shrink-0" 
+                        className="w-4 h-4 rounded-full flex-shrink-0" 
                         style={{ backgroundColor: COLORS[index % COLORS.length] }}
                       />
-                      <span className="text-sm font-medium">{item.name}</span>
+                      <span className="text-sm font-medium min-w-0">{item.name}</span>
                     </div>
-                    <Badge variant="outline" className="ml-2">{item.value} climb{item.value !== 1 ? 's' : ''}</Badge>
+                    <Badge variant="outline" className="ml-3 flex-shrink-0">{item.value} climb{item.value !== 1 ? 's' : ''}</Badge>
                   </div>
                 ))}
               </div>
