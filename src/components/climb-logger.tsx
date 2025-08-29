@@ -62,9 +62,6 @@ export function ClimbLogger() {
     }
   };
 
-  const handleFlash = () => {
-    setFormData(prev => ({ ...prev, attempts: 1, status: 'flash' }));
-  };
 
   const toggleHoldType = (holdType: string) => {
     setFormData(prev => ({
@@ -79,16 +76,8 @@ export function ClimbLogger() {
     <div className="p-4 space-y-6">
       <Card>
         <CardHeader>
-          <CardTitle className="flex justify-between items-center">
+          <CardTitle>
             Log New Climb
-            <Button 
-              onClick={handleFlash}
-              variant="outline"
-              size="sm"
-              className="text-secondary border-secondary hover:bg-secondary/10"
-            >
-              ⚡ Flash
-            </Button>
           </CardTitle>
         </CardHeader>
         <CardContent>
@@ -203,7 +192,7 @@ export function ClimbLogger() {
                     <DialogTrigger asChild>
                       <Badge
                         variant={formData.holdTypes.includes(hold.value) ? "default" : "outline"}
-                        className="cursor-pointer hover:bg-gray-100"
+                        className="cursor-pointer hover:bg-primary/20"
                         onClick={() => toggleHoldType(hold.value)}
                       >
                         {hold.label}

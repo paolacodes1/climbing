@@ -142,7 +142,7 @@ export function Community() {
             <p className="text-muted-foreground mb-2">
               Connect with fellow climbers in your area
             </p>
-            <Badge variant="secondary">Coming Soon: Full Social Features</Badge>
+            <Badge className="bg-primary text-primary-foreground">Coming Soon: Full Social Features</Badge>
           </div>
         </CardContent>
       </Card>
@@ -182,7 +182,7 @@ export function Community() {
                         <div className="font-medium">
                           {climber.name}
                           {climber.name === 'You' && (
-                            <Badge variant="secondary" className="ml-2">You</Badge>
+                            <Badge className="ml-2 bg-primary text-primary-foreground">You</Badge>
                           )}
                         </div>
                         <div className="text-sm text-muted-foreground">

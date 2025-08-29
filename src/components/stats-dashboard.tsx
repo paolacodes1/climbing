@@ -157,7 +157,7 @@ export function StatsDashboard() {
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">{totalClimbs}</div>
-            <Badge variant="secondary" className="mt-1">{recentClimbs.length} this week</Badge>
+            <Badge className="mt-1 bg-primary text-primary-foreground">{recentClimbs.length} this week</Badge>
           </CardContent>
         </Card>
 
@@ -187,7 +187,7 @@ export function StatsDashboard() {
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">{flashRate}%</div>
-            <Badge variant="secondary" className="mt-1">{flashedClimbs.length} flashes</Badge>
+            <Badge className="mt-1 bg-primary text-primary-foreground">{flashedClimbs.length} flashes</Badge>
           </CardContent>
         </Card>
       </div>
