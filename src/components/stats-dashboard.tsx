@@ -239,17 +239,17 @@ export function StatsDashboard() {
                 </PieChart>
               </ResponsiveContainer>
               
-              <div className="space-y-2">
+              <div className="space-y-3">
                 {routeTypeChartData.map((item, index) => (
-                  <div key={item.name} className="flex items-center justify-between">
-                    <div className="flex items-center gap-2">
+                  <div key={item.name} className="flex items-center justify-between py-1">
+                    <div className="flex items-center gap-3">
                       <div 
-                        className="w-3 h-3 rounded-full" 
+                        className="w-3 h-3 rounded-full flex-shrink-0" 
                         style={{ backgroundColor: COLORS[index % COLORS.length] }}
                       />
-                      <span className="text-sm">{item.name}</span>
+                      <span className="text-sm font-medium">{item.name}</span>
                     </div>
-                    <Badge variant="outline">{item.value} climbs</Badge>
+                    <Badge variant="outline" className="ml-2">{item.value} climb{item.value !== 1 ? 's' : ''}</Badge>
                   </div>
                 ))}
               </div>

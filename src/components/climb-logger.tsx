@@ -85,7 +85,7 @@ export function ClimbLogger() {
               onClick={handleFlash}
               variant="outline"
               size="sm"
-              className="text-green-600 border-green-600 hover:bg-green-50"
+              className="text-secondary border-secondary hover:bg-secondary/10"
             >
               ⚡ Flash
             </Button>
