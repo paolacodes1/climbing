@@ -18,7 +18,7 @@ export function ClimbLogger() {
     routeName: '',
     grade: '',
     attempts: 1,
-    status: 'attempted' as 'attempted' | 'completed' | 'flash',
+    status: '' as '' | 'attempted' | 'completed' | 'flash',
     routeType: '',
     wallAngle: '',
     holdTypes: [] as string[],
@@ -37,6 +37,7 @@ export function ClimbLogger() {
 
     const climb: Climb = {
       ...formData,
+      status: formData.status || 'attempted',
       gymId: selectedGym,
       date: new Date(),
       createdAt: new Date(),
@@ -51,7 +52,7 @@ export function ClimbLogger() {
         routeName: '',
         grade: '',
         attempts: 1,
-        status: 'attempted',
+        status: '',
         routeType: '',
         wallAngle: '',
         holdTypes: [],
@@ -130,7 +131,7 @@ export function ClimbLogger() {
                 }
               >
                 <SelectTrigger>
-                  <SelectValue />
+                  <SelectValue placeholder="Select status" />
                 </SelectTrigger>
                 <SelectContent>
                   <SelectItem value="attempted">Attempted</SelectItem>

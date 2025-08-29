@@ -203,8 +203,7 @@ export function StatsDashboard() {
               <BarChart data={gradeChartData}>
                 <CartesianGrid strokeDasharray="3 3" />
                 <XAxis dataKey="grade" />
-                <YAxis />
-                <Tooltip />
+                <YAxis tickFormatter={(value) => Math.floor(value).toString()} domain={[0, 'dataMax']} />
                 <Bar dataKey="count" fill="#2563eb" />
               </BarChart>
             </ResponsiveContainer>
@@ -235,7 +234,6 @@ export function StatsDashboard() {
                       <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
                     ))}
                   </Pie>
-                  <Tooltip />
                 </PieChart>
               </ResponsiveContainer>
               
@@ -269,8 +267,7 @@ export function StatsDashboard() {
               <LineChart data={monthlyChartData}>
                 <CartesianGrid strokeDasharray="3 3" />
                 <XAxis dataKey="month" />
-                <YAxis />
-                <Tooltip />
+                <YAxis tickFormatter={(value) => Math.floor(value).toString()} domain={[0, 'dataMax']} />
                 <Line type="monotone" dataKey="total" stroke="#2563eb" name="Total Climbs" />
                 <Line type="monotone" dataKey="completed" stroke="#16a34a" name="Completed" />
               </LineChart>
