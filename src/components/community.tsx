@@ -168,7 +168,7 @@ export function Community() {
                   <div 
                     key={climber.name}
                     className={`flex items-center justify-between p-3 rounded-lg ${
-                      climber.name === 'You' ? 'bg-secondary/20 border border-secondary/30' : 'bg-muted/50'
+                      climber.name === 'You' ? 'bg-primary/20 border border-primary/30' : 'bg-muted/50'
                     }`}
                   >
                     <div className="flex items-center gap-3">

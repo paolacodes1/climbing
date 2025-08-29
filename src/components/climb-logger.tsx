@@ -165,7 +165,7 @@ export function ClimbLogger() {
                     <SelectItem key={type.value} value={type.value}>
                       <div>
                         <div>{type.label}</div>
-                        <div className="text-xs text-gray-500">{type.description}</div>
+                        <div className="text-xs text-foreground">{type.description}</div>
                       </div>
                     </SelectItem>
                   ))}
@@ -187,7 +187,7 @@ export function ClimbLogger() {
                     <SelectItem key={angle.value} value={angle.value}>
                       <div>
                         <div>{angle.label}</div>
-                        <div className="text-xs text-gray-500">{angle.description}</div>
+                        <div className="text-xs text-foreground">{angle.description}</div>
                       </div>
                     </SelectItem>
                   ))}
@@ -213,7 +213,7 @@ export function ClimbLogger() {
                       <DialogHeader>
                         <DialogTitle>{hold.label}</DialogTitle>
                       </DialogHeader>
-                      <p className="text-sm text-gray-600">{hold.description}</p>
+                      <p className="text-sm text-foreground">{hold.description}</p>
                     </DialogContent>
                   </Dialog>
                 ))}
