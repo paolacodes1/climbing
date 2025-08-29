@@ -75,7 +75,7 @@ export function GymSelector() {
             value={selectedGym?.toString() || ''} 
             onValueChange={(value) => setSelectedGym(parseInt(value))}
           >
-            <SelectTrigger className="w-full min-w-[250px] h-auto py-4 px-4">
+            <SelectTrigger className="w-full min-w-[250px] h-auto py-6 px-4 min-h-[60px]">
               <SelectValue placeholder="Choose a gym to start logging climbs" />
             </SelectTrigger>
             <SelectContent>
