@@ -75,15 +75,19 @@ export function GymSelector() {
             value={selectedGym?.toString() || ''} 
             onValueChange={(value) => setSelectedGym(parseInt(value))}
           >
-            <SelectTrigger>
+            <SelectTrigger className="w-full min-w-[250px] h-auto py-3 px-4">
               <SelectValue placeholder="Choose a gym to start logging climbs" />
             </SelectTrigger>
             <SelectContent>
               {gyms.map(gym => (
-                <SelectItem key={gym.id} value={gym.id!.toString()}>
+                <SelectItem 
+                  key={gym.id} 
+                  value={gym.id!.toString()}
+                  className="py-3 px-4 focus:bg-secondary focus:text-secondary-foreground data-[highlighted]:bg-secondary data-[highlighted]:text-secondary-foreground"
+                >
                   <div>
                     <div className="font-medium">{gym.name}</div>
-                    <div className="text-sm text-gray-500">{gym.location}</div>
+                    <div className="text-sm text-muted-foreground">{gym.location}</div>
                   </div>
                 </SelectItem>
               ))}
@@ -91,11 +95,11 @@ export function GymSelector() {
           </Select>
 
           {selectedGymInfo && (
-            <div className="mt-3 p-3 bg-green-50 rounded-lg">
-              <div className="text-sm font-medium text-green-800">
+            <div className="mt-3 p-3 bg-secondary/20 border border-secondary/30 rounded-lg">
+              <div className="text-sm font-medium text-secondary-foreground">
                 Selected: {selectedGymInfo.name}
               </div>
-              <div className="text-xs text-green-600">{selectedGymInfo.location}</div>
+              <div className="text-xs text-muted-foreground">{selectedGymInfo.location}</div>
             </div>
           )}
         </CardContent>
