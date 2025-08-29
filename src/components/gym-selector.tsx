@@ -83,7 +83,7 @@ export function GymSelector() {
                 <SelectItem 
                   key={gym.id} 
                   value={gym.id!.toString()}
-                  className="py-3 px-4 focus:bg-secondary focus:text-secondary-foreground data-[highlighted]:bg-secondary data-[highlighted]:text-secondary-foreground"
+                  className="py-3 px-4"
                 >
                   <div>
                     <div className="font-medium">{gym.name}</div>
