@@ -1,0 +1,12 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="512" height="512" rx="110" fill="#2563eb"/>
+  <path d="M150 350L200 200L300 250L350 150L400 200L320 350L250 300L180 380Z" fill="white" stroke="white" stroke-width="8" stroke-linejoin="round"/>
+  <circle cx="200" cy="200" r="12" fill="white"/>
+  <circle cx="300" cy="250" r="12" fill="white"/>
+  <circle cx="350" cy="150" r="12" fill="white"/>
+  <circle cx="400" cy="200" r="12" fill="white"/>
+  <circle cx="320" cy="350" r="12" fill="white"/>
+  <circle cx="250" cy="300" r="12" fill="white"/>
+  <circle cx="180" cy="380" r="12" fill="white"/>
+  <text x="256" y="450" text-anchor="middle" fill="white" font-family="system-ui, sans-serif" font-weight="600" font-size="48">BOULDER</text>
+</svg>

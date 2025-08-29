@@ -1,0 +1,23 @@
+0 verbose cli /usr/local/bin/node /usr/local/lib/node_modules/npm/bin/npm-cli.js
+1 info using npm@10.8.2
+2 info using node@v20.19.4
+3 silly config load:file:/usr/local/lib/node_modules/npm/npmrc
+4 silly config load:file:/Users/paolagisler/Desktop/Climbing/bouldering-tracker/.npmrc
+5 silly config load:file:/Users/paolagisler/.npmrc
+6 silly config load:file:/usr/local/etc/npmrc
+7 verbose title npm exec shadcn@latest add tabs
+8 verbose argv "exec" "--" "shadcn@latest" "add" "tabs"
+9 verbose logfile logs-max:10 dir:/Users/paolagisler/Desktop/Climbing/bouldering-tracker/npm-cache/_logs/2025-08-28T04_22_39_820Z-
+10 verbose logfile /Users/paolagisler/Desktop/Climbing/bouldering-tracker/npm-cache/_logs/2025-08-28T04_22_39_820Z-debug-0.log
+11 silly logfile start cleaning logs, removing 1 files
+12 silly logfile done cleaning log files
+13 silly packumentCache heap:4345298944 maxSize:1086324736 maxEntrySize:543162368
+14 http fetch GET 200 https://registry.npmjs.org/shadcn 258ms (cache revalidated)
+15 silly packumentCache heap:4345298944 maxSize:1086324736 maxEntrySize:543162368
+16 silly packumentCache heap:4345298944 maxSize:1086324736 maxEntrySize:543162368
+17 verbose cwd /Users/paolagisler/Desktop/Climbing/bouldering-tracker
+18 verbose os Darwin 24.6.0
+19 verbose node v20.19.4
+20 verbose npm  v10.8.2
+21 verbose exit 0
+22 info ok
