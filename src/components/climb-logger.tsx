@@ -125,7 +125,7 @@ export function ClimbLogger() {
             <div>
               <label className="block text-sm font-medium mb-1">Status</label>
               <Select 
-                value={formData.status} 
+                value={formData.status || undefined} 
                 onValueChange={(value: 'attempted' | 'completed' | 'flash') => 
                   setFormData(prev => ({ ...prev, status: value }))
                 }
