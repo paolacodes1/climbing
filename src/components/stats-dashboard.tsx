@@ -220,7 +220,7 @@ export function StatsDashboard() {
           </CardHeader>
           <CardContent>
             <div className="space-y-6">
-              <ResponsiveContainer width="100%" height={200}>
+              <ResponsiveContainer width="100%" height={300}>
                 <PieChart>
                   <Pie
                     data={routeTypeChartData}
@@ -239,9 +239,9 @@ export function StatsDashboard() {
                 </PieChart>
               </ResponsiveContainer>
               
-              <div className="space-y-8 pt-6 min-h-[280px]">
+              <div className="space-y-4 pt-4 min-h-[120px]">
                 {routeTypeChartData.map((item, index) => (
-                  <div key={item.name} className="flex items-center justify-between py-4 px-3 min-h-[60px]">
+                  <div key={item.name} className="flex items-center justify-between py-2 px-2 min-h-[40px]">
                     <div className="flex items-center gap-5">
                       <div 
                         className="w-5 h-5 rounded-full flex-shrink-0" 
