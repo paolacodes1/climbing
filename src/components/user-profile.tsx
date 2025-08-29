@@ -5,6 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Separator } from '@/components/ui/separator';
+import { ThemeToggle } from '@/components/theme-toggle';
 import { db } from '@/lib/db';
 import { useBoulderingStore } from '@/lib/store';
 import { Climb, Gym } from '@/types/climb';
@@ -248,6 +249,16 @@ export function UserProfile() {
           <CardTitle>Settings</CardTitle>
         </CardHeader>
         <CardContent className="space-y-4">
+          <div className="flex justify-between items-center">
+            <div>
+              <div className="font-medium">Theme</div>
+              <div className="text-sm text-muted-foreground">Toggle between light and dark mode</div>
+            </div>
+            <ThemeToggle />
+          </div>
+          
+          <Separator />
+          
           <div className="flex justify-between items-center">
             <div>
               <div className="font-medium">Export Data</div>
