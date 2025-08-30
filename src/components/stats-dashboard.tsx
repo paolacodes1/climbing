@@ -223,9 +223,9 @@ export function StatsDashboard() {
           <CardContent>
             <ResponsiveContainer width="100%" height={200}>
               <BarChart data={gradeChartData}>
-                <CartesianGrid strokeDasharray="0" stroke="#374151" />
-                <XAxis dataKey="grade" tick={{ fill: 'white', fontSize: 14 }} tickMargin={8} />
-                <YAxis tickFormatter={(value) => Math.floor(value).toString()} domain={[0, 'dataMax']} allowDecimals={false} interval={0} />
+                <CartesianGrid strokeDasharray="0" stroke="#374151" horizontal={true} vertical={true} />
+                <XAxis dataKey="grade" tick={{ fill: 'white', fontSize: 14 }} tickMargin={8} axisLine={{ stroke: '#374151' }} tickLine={{ stroke: '#374151' }} />
+                <YAxis tickFormatter={(value) => Math.floor(value).toString()} domain={[0, 'dataMax']} allowDecimals={false} interval={0} tick={{ fill: '#9CA3AF', fontSize: 12 }} axisLine={{ stroke: '#374151' }} tickLine={{ stroke: '#374151' }} />
                 <Bar dataKey="count" />
               </BarChart>
             </ResponsiveContainer>
