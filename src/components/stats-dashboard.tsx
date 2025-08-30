@@ -120,12 +120,12 @@ export function StatsDashboard() {
 
   const gradeChartData = Object.entries(gradeDistribution)
     .filter(([grade]) => gradeValues[grade] !== undefined) // Only include grades that exist in current system
+    .sort(([a], [b]) => (gradeValues[a] || 0) - (gradeValues[b] || 0)) // Sort first
     .map(([grade, count], index) => ({ 
       grade, 
       count, 
-      fill: COLORS[index % COLORS.length] 
-    }))
-    .sort((a, b) => (gradeValues[a.grade] || 0) - (gradeValues[b.grade] || 0));
+      fill: COLORS.length > 0 ? COLORS[index % COLORS.length] : '#0D5C63' // Fallback color
+    }));
 
   // Route type analysis
   const routeTypeStats = completedClimbs.reduce((acc, climb) => {
@@ -144,6 +144,11 @@ export function StatsDashboard() {
 
   // Custom color palette
   const COLORS = ['#0D5C63', '#D19C1D', '#88BB92', '#C3423F'];
+  
+  // Safety check for colors
+  if (COLORS.length === 0) {
+    console.error('COLORS array is empty');
+  }
 
   // Monthly progress
   const monthlyData = climbs.reduce((acc, climb) => {
