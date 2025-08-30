@@ -149,7 +149,9 @@ export function ClimbLogger() {
                 onValueChange={(value) => setFormData(prev => ({ ...prev, routeType: value }))}
               >
                 <SelectTrigger>
-                  <SelectValue placeholder="Select route type" />
+                  <SelectValue placeholder="Select route type">
+                    {formData.routeType && ROUTE_TYPES.find(t => t.value === formData.routeType)?.label}
+                  </SelectValue>
                 </SelectTrigger>
                 <SelectContent>
                   {ROUTE_TYPES.map(type => (
@@ -171,7 +173,9 @@ export function ClimbLogger() {
                 onValueChange={(value) => setFormData(prev => ({ ...prev, wallAngle: value }))}
               >
                 <SelectTrigger>
-                  <SelectValue placeholder="Select wall angle" />
+                  <SelectValue placeholder="Select wall angle">
+                    {formData.wallAngle && WALL_ANGLES.find(w => w.value === formData.wallAngle)?.label}
+                  </SelectValue>
                 </SelectTrigger>
                 <SelectContent>
                   {WALL_ANGLES.map(angle => (

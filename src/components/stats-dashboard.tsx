@@ -23,7 +23,7 @@ import {
 } from 'recharts';
 
 // Custom color palette - moved outside component to prevent re-creation
-const COLORS = ['#0D5C63', '#D19C1D', '#88BB92', '#C3423F'];
+const COLORS = ['#D19C1D', '#88BB92', '#C3423F'];
 
 export function StatsDashboard() {
   const [climbs, setClimbs] = useState<Climb[]>([]);
@@ -174,40 +174,40 @@ export function StatsDashboard() {
       {/* Summary Cards */}
       <div className="grid grid-cols-2 gap-4">
         <Card>
-          <CardHeader className="pb-2">
+          <CardHeader className="pb-1">
             <CardTitle className="text-sm font-medium text-muted-foreground">Total Climbs</CardTitle>
           </CardHeader>
-          <CardContent>
+          <CardContent className="pt-1">
             <div className="text-2xl font-bold">{totalClimbs}</div>
             <Badge className="mt-1 bg-primary text-primary-foreground">{recentClimbs.length} this week</Badge>
           </CardContent>
         </Card>
 
         <Card>
-          <CardHeader className="pb-2">
+          <CardHeader className="pb-1">
             <CardTitle className="text-sm font-medium text-muted-foreground">Success Rate</CardTitle>
           </CardHeader>
-          <CardContent>
+          <CardContent className="pt-1">
             <div className="text-2xl font-bold">{successRate}%</div>
             <Progress value={successRate} className="mt-2" />
           </CardContent>
         </Card>
 
         <Card>
-          <CardHeader className="pb-2">
+          <CardHeader className="pb-1">
             <CardTitle className="text-sm font-medium text-muted-foreground">Highest Grade</CardTitle>
           </CardHeader>
-          <CardContent>
+          <CardContent className="pt-1">
             <div className="text-2xl font-bold">{highestGrade}</div>
             <Badge variant="outline" className="mt-1">Completed</Badge>
           </CardContent>
         </Card>
 
         <Card>
-          <CardHeader className="pb-2">
+          <CardHeader className="pb-1">
             <CardTitle className="text-sm font-medium text-muted-foreground">Flash Rate</CardTitle>
           </CardHeader>
-          <CardContent>
+          <CardContent className="pt-1">
             <div className="text-2xl font-bold">{flashRate}%</div>
             <Badge className="mt-1 bg-primary text-primary-foreground">{flashedClimbs.length} flashes</Badge>
           </CardContent>
@@ -259,17 +259,17 @@ export function StatsDashboard() {
                 </PieChart>
               </ResponsiveContainer>
               
-              <div className="space-y-4 pt-4 min-h-[120px]">
+              <div className="space-y-6 pt-6">
                 {routeTypeChartData.map((item, index) => (
-                  <div key={item.name} className="flex items-center justify-between py-2 px-2 min-h-[40px]">
-                    <div className="flex items-center gap-5">
+                  <div key={item.name} className="flex items-center justify-between py-3 px-3">
+                    <div className="flex items-center gap-4">
                       <div 
-                        className="w-5 h-5 rounded-full flex-shrink-0" 
+                        className="w-6 h-6 rounded-full flex-shrink-0" 
                         style={{ backgroundColor: COLORS[index % COLORS.length] }}
                       />
-                      <span className="text-base font-medium min-w-0">{item.name}</span>
+                      <span className="text-lg font-medium min-w-0">{item.name}</span>
                     </div>
-                    <Badge variant="outline" className="ml-4 flex-shrink-0 text-sm px-3 py-1">{item.value} climb{item.value !== 1 ? 's' : ''}</Badge>
+                    <Badge variant="outline" className="ml-4 flex-shrink-0 text-base px-4 py-2">{item.value} climb{item.value !== 1 ? 's' : ''}</Badge>
                   </div>
                 ))}
               </div>
