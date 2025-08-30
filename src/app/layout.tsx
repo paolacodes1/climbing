@@ -65,7 +65,7 @@ export default function RootLayout({
             <img 
               src="/climbing/logo.png" 
               alt="ChalkUp" 
-              className="h-8 w-auto opacity-90"
+              className="h-16 w-auto opacity-90"
             />
           </div>
         </div>
