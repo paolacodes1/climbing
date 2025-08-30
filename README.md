@@ -110,31 +110,36 @@ The app features a custom **Caribbean Current** color theme:
 4. Push to the branch (`git push origin feature/amazing-feature`)
 5. Open a Pull Request
 
+## 📸 Screenshots
+
+The application features a comprehensive Progressive Web App interface designed for mobile-first climbing sessions:
+
+### Mobile-First Interface
+
+#### Climb Logging Interface
+Track every boulder problem with detailed information including route names, grades, attempts, and completion status.
+
+![Climb Logging Interface](public/images/climb-logging.png)
+
+#### Progress Analytics Dashboard
+Visualize your climbing progress with interactive charts showing grade distribution, success rates, and monthly trends.
+
+![Progress Analytics Dashboard](public/images/progress-dashboard.png)
+
+#### Community Leaderboard
+Connect with fellow climbers and compete on local leaderboards to stay motivated.
+
+![Community Leaderboard](public/images/community-leaderboard.png)
+
+#### User Profile
+Monitor your personal climbing journey with detailed statistics and achievement tracking.
+
+![User Profile](public/images/user-profile.png)
+
 ## 📄 License
 
 This project is open source and available under the [MIT License](LICENSE).
 
-## 📱 Screenshots
-
-### Climb Logging Interface
-![Log New Climb Interface](public/Screenshots/Screenshot%202025-08-30%20at%201.54.55%20PM.png)
-
-*Comprehensive climb logging with route details, grades, hold types, and notes*
-
-### Progress Analytics Dashboard
-![Progress Analytics Dashboard](public/Screenshots/Screenshot%202025-08-30%20at%201.55.12%20PM.png)
-
-*Track your climbing statistics with interactive charts and performance metrics*
-
-### Community Features
-![Community Leaderboards](public/Screenshots/Screenshot%202025-08-30%20at%201.55.21%20PM.png)
-
-*Connect with fellow climbers and compete on leaderboards*
-
-### Personal Profile
-![Personal Profile Dashboard](public/Screenshots/Screenshot%202025-08-30%20at%201.55.28%20PM.png)
-
-*Monitor your climbing journey with personalized stats and achievements*
 
 ---
 
