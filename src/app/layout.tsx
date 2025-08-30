@@ -63,7 +63,7 @@ export default function RootLayout({
         <div className="w-full bg-background pt-4 pb-2">
           <div className="flex justify-center">
             <img 
-              src="/logo.png" 
+              src="/climbing/logo.png" 
               alt="ChalkUp" 
               className="h-8 w-auto opacity-90"
             />
