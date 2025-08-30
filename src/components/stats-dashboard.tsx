@@ -243,7 +243,7 @@ export function StatsDashboard() {
             <div className="space-y-6">
               <div className="[&_.recharts-pie-label-text]:fill-white [&_.recharts-pie-label-line]:stroke-white">
                 <ResponsiveContainer width="100%" height={350}>
-                  <PieChart margin={{ top: 30, right: 50, bottom: 30, left: 50 }}>
+                  <PieChart margin={{ top: 40, right: 50, bottom: 40, left: 50 }}>
                   <Pie
                     data={routeTypeChartData}
                     cx="50%"
@@ -256,7 +256,7 @@ export function StatsDashboard() {
                     labelLine={false}
                   >
                     {routeTypeChartData.map((entry, index) => (
-                      <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+                      <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} stroke="#94a3b8" strokeWidth={2} />
                     ))}
                     </Pie>
                   </PieChart>
