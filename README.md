@@ -1,3 +1,7 @@
+<div align="center">
+  <img src="public/logo1.png" alt="ChalkUp Logo" width="200" />
+</div>
+
 # 🧗‍♀️ Bouldering Tracker PWA
 
 A comprehensive Progressive Web App for tracking your bouldering progress, designed for climbers who want to analyze their performance and stay motivated.

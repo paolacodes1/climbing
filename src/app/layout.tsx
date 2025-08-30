@@ -60,15 +60,6 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen bg-background text-foreground`}
       >
-        <div className="w-full bg-background pt-4 pb-2">
-          <div className="flex justify-center">
-            <img 
-              src="/climbing/logo.png" 
-              alt="ChalkUp" 
-              className="h-16 w-auto opacity-90"
-            />
-          </div>
-        </div>
         {children}
       </body>
     </html>
