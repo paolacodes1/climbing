@@ -241,23 +241,27 @@ export function StatsDashboard() {
           </CardHeader>
           <CardContent>
             <div className="space-y-6">
-              <ResponsiveContainer width="100%" height={350}>
-                <PieChart margin={{ top: 20, right: 30, bottom: 20, left: 30 }}>
+              <div className="[&_.recharts-pie-label-text]:fill-white [&_.recharts-pie-label-line]:stroke-white">
+                <ResponsiveContainer width="100%" height={350}>
+                  <PieChart margin={{ top: 30, right: 50, bottom: 30, left: 50 }}>
                   <Pie
                     data={routeTypeChartData}
                     cx="50%"
                     cy="50%"
-                    outerRadius={70}
+                    outerRadius={80}
+                    innerRadius={0}
                     fill="#8884d8"
                     dataKey="value"
                     label={({ name, percentage }) => `${name}: ${percentage}%`}
+                    labelLine={{ stroke: 'white', strokeWidth: 1 }}
                   >
                     {routeTypeChartData.map((entry, index) => (
                       <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
                     ))}
-                  </Pie>
-                </PieChart>
-              </ResponsiveContainer>
+                    </Pie>
+                  </PieChart>
+                </ResponsiveContainer>
+              </div>
               
               <div className="space-y-6 pt-6">
                 {routeTypeChartData.map((item, index) => (
