@@ -256,7 +256,7 @@ export function StatsDashboard() {
                     labelLine={false}
                   >
                     {routeTypeChartData.map((entry, index) => (
-                      <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} stroke="#94a3b8" strokeWidth={2} />
+                      <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} stroke="white" strokeWidth={1} />
                     ))}
                     </Pie>
                   </PieChart>
