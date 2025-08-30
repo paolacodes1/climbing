@@ -252,7 +252,28 @@ export function StatsDashboard() {
                     innerRadius={0}
                     fill="#8884d8"
                     dataKey="value"
-                    label={({ name, percentage }) => `${name}: ${percentage}%`}
+                    label={({ name, percentage, cx, cy, midAngle }) => {
+                      const RADIAN = Math.PI / 180;
+                      const radius = 100;
+                      const x = cx + radius * Math.cos(-midAngle * RADIAN);
+                      const y = cy + radius * Math.sin(-midAngle * RADIAN);
+                      
+                      // Force labels to top or bottom only
+                      const adjustedY = y < cy ? cy - 100 : cy + 100;
+                      
+                      return (
+                        <text 
+                          x={cx} 
+                          y={adjustedY} 
+                          fill="white" 
+                          textAnchor="middle" 
+                          dominantBaseline="central"
+                          fontSize="14"
+                        >
+                          {`${name}: ${percentage}%`}
+                        </text>
+                      );
+                    }}
                     labelLine={false}
                   >
                     {routeTypeChartData.map((entry, index) => (
