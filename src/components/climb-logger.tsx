@@ -8,6 +8,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import { Badge } from '@/components/ui/badge';
 import { Textarea } from '@/components/ui/textarea';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
+import { InformationCircleIcon } from '@heroicons/react/24/outline';
 import { ROUTE_TYPES, WALL_ANGLES, HOLD_TYPES, GRADES } from '@/types/climb';
 import { db } from '@/lib/db';
 import { useBoulderingStore } from '@/lib/store';
@@ -186,26 +187,37 @@ export function ClimbLogger() {
             </div>
 
             <div>
-              <label className="block text-sm font-medium mb-2">Hold Types</label>
+              <div className="flex items-center gap-2 mb-2">
+                <label className="block text-sm font-medium">Hold Types</label>
+                <Dialog>
+                  <DialogTrigger asChild>
+                    <InformationCircleIcon className="w-4 h-4 text-[#0D5C63] cursor-pointer hover:text-[#0D5C63]/80" />
+                  </DialogTrigger>
+                  <DialogContent>
+                    <DialogHeader>
+                      <DialogTitle>Hold Types Guide</DialogTitle>
+                    </DialogHeader>
+                    <div className="space-y-4">
+                      {HOLD_TYPES.map(hold => (
+                        <div key={hold.value} className="space-y-1">
+                          <h4 className="font-medium">{hold.label}</h4>
+                          <p className="text-sm text-muted-foreground">{hold.description}</p>
+                        </div>
+                      ))}
+                    </div>
+                  </DialogContent>
+                </Dialog>
+              </div>
               <div className="flex flex-wrap gap-2">
                 {HOLD_TYPES.map(hold => (
-                  <Dialog key={hold.value}>
-                    <DialogTrigger asChild>
-                      <Badge
-                        variant={formData.holdTypes.includes(hold.value) ? "default" : "outline"}
-                        className="cursor-pointer hover:bg-primary/20"
-                        onClick={() => toggleHoldType(hold.value)}
-                      >
-                        {hold.label}
-                      </Badge>
-                    </DialogTrigger>
-                    <DialogContent>
-                      <DialogHeader>
-                        <DialogTitle>{hold.label}</DialogTitle>
-                      </DialogHeader>
-                      <p className="text-sm text-foreground">{hold.description}</p>
-                    </DialogContent>
-                  </Dialog>
+                  <Badge
+                    key={hold.value}
+                    variant={formData.holdTypes.includes(hold.value) ? "default" : "outline"}
+                    className="cursor-pointer hover:bg-primary/20"
+                    onClick={() => toggleHoldType(hold.value)}
+                  >
+                    {hold.label}
+                  </Badge>
                 ))}
               </div>
             </div>

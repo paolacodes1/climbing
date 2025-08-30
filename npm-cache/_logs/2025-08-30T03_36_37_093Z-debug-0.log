@@ -7,9 +7,9 @@
 6 silly config load:file:/usr/local/etc/npmrc
 7 verbose title npm run build
 8 verbose argv "run" "build"
-9 verbose logfile logs-max:10 dir:/Users/paolagisler/Desktop/Climbing/bouldering-tracker/npm-cache/_logs/2025-08-29T11_45_14_365Z-
-10 verbose logfile /Users/paolagisler/Desktop/Climbing/bouldering-tracker/npm-cache/_logs/2025-08-29T11_45_14_365Z-debug-0.log
-11 silly logfile start cleaning logs, removing 1 files
+9 verbose logfile logs-max:10 dir:/Users/paolagisler/Desktop/Climbing/bouldering-tracker/npm-cache/_logs/2025-08-30T03_36_37_093Z-
+10 verbose logfile /Users/paolagisler/Desktop/Climbing/bouldering-tracker/npm-cache/_logs/2025-08-30T03_36_37_093Z-debug-0.log
+11 silly logfile start cleaning logs, removing 12 files
 12 silly logfile done cleaning log files
 13 verbose cwd /Users/paolagisler/Desktop/Climbing/bouldering-tracker
 14 verbose os Darwin 24.6.0

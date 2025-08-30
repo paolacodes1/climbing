@@ -108,7 +108,11 @@ export function StatsDashboard() {
   }, {} as Record<string, number>);
 
   const gradeChartData = Object.entries(gradeDistribution)
-    .map(([grade, count]) => ({ grade, count }))
+    .map(([grade, count], index) => ({ 
+      grade, 
+      count, 
+      fill: COLORS[index % COLORS.length] 
+    }))
     .sort((a, b) => (gradeValues[a.grade] || 0) - (gradeValues[b.grade] || 0));
 
   // Route type analysis
@@ -126,8 +130,8 @@ export function StatsDashboard() {
     };
   });
 
-  // Colors for pie chart
-  const COLORS = ['#2563eb', '#dc2626', '#16a34a', '#ca8a04', '#9333ea', '#c2410c'];
+  // Custom color palette
+  const COLORS = ['#0D5C63', '#D19C1D', '#88BB92', '#C3423F'];
 
   // Monthly progress
   const monthlyData = climbs.reduce((acc, climb) => {
@@ -204,7 +208,7 @@ export function StatsDashboard() {
                 <CartesianGrid strokeDasharray="3 3" />
                 <XAxis dataKey="grade" />
                 <YAxis tickFormatter={(value) => Math.floor(value).toString()} domain={[0, 'dataMax']} allowDecimals={false} interval={0} />
-                <Bar dataKey="count" fill="#2563eb" />
+                <Bar dataKey="count" />
               </BarChart>
             </ResponsiveContainer>
           </CardContent>
@@ -268,8 +272,8 @@ export function StatsDashboard() {
                 <CartesianGrid strokeDasharray="3 3" />
                 <XAxis dataKey="month" />
                 <YAxis tickFormatter={(value) => Math.floor(value).toString()} domain={[0, 'dataMax']} allowDecimals={false} interval={0} />
-                <Line type="monotone" dataKey="total" stroke="#2563eb" name="Total Climbs" />
-                <Line type="monotone" dataKey="completed" stroke="#16a34a" name="Completed" />
+                <Line type="monotone" dataKey="total" stroke="#0D5C63" name="Total Climbs" />
+                <Line type="monotone" dataKey="completed" stroke="#88BB92" name="Completed" />
               </LineChart>
             </ResponsiveContainer>
           </CardContent>
