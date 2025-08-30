@@ -223,8 +223,8 @@ export function StatsDashboard() {
           <CardContent>
             <ResponsiveContainer width="100%" height={200}>
               <BarChart data={gradeChartData}>
-                <CartesianGrid strokeDasharray="3 3" />
-                <XAxis dataKey="grade" />
+                <CartesianGrid strokeDasharray="0" stroke="#374151" />
+                <XAxis dataKey="grade" tick={{ fill: 'white', fontSize: 14 }} tickMargin={8} />
                 <YAxis tickFormatter={(value) => Math.floor(value).toString()} domain={[0, 'dataMax']} allowDecimals={false} interval={0} />
                 <Bar dataKey="count" />
               </BarChart>
@@ -241,13 +241,13 @@ export function StatsDashboard() {
           </CardHeader>
           <CardContent>
             <div className="space-y-6">
-              <ResponsiveContainer width="100%" height={300}>
-                <PieChart>
+              <ResponsiveContainer width="100%" height={350}>
+                <PieChart margin={{ top: 20, right: 30, bottom: 20, left: 30 }}>
                   <Pie
                     data={routeTypeChartData}
                     cx="50%"
                     cy="50%"
-                    outerRadius={80}
+                    outerRadius={70}
                     fill="#8884d8"
                     dataKey="value"
                     label={({ name, percentage }) => `${name}: ${percentage}%`}
