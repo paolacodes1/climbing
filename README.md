@@ -117,22 +117,22 @@ This project is open source and available under the [MIT License](LICENSE).
 ## 📱 Screenshots
 
 ### Climb Logging Interface
-<img src="https://paolacodes1.github.io/climbing/Screenshots/Screenshot%202025-08-30%20at%201.54.55%20PM.png" alt="Log New Climb Interface" width="600">
+![Log New Climb Interface](public/Screenshots/Screenshot%202025-08-30%20at%201.54.55%20PM.png)
 
 *Comprehensive climb logging with route details, grades, hold types, and notes*
 
 ### Progress Analytics Dashboard
-<img src="https://paolacodes1.github.io/climbing/Screenshots/Screenshot%202025-08-30%20at%201.55.12%20PM.png" alt="Progress Analytics Dashboard" width="600">
+![Progress Analytics Dashboard](public/Screenshots/Screenshot%202025-08-30%20at%201.55.12%20PM.png)
 
 *Track your climbing statistics with interactive charts and performance metrics*
 
 ### Community Features
-<img src="https://paolacodes1.github.io/climbing/Screenshots/Screenshot%202025-08-30%20at%201.55.21%20PM.png" alt="Community Leaderboards" width="600">
+![Community Leaderboards](public/Screenshots/Screenshot%202025-08-30%20at%201.55.21%20PM.png)
 
 *Connect with fellow climbers and compete on leaderboards*
 
 ### Personal Profile
-<img src="https://paolacodes1.github.io/climbing/Screenshots/Screenshot%202025-08-30%20at%201.55.28%20PM.png" alt="Personal Profile Dashboard" width="600">
+![Personal Profile Dashboard](public/Screenshots/Screenshot%202025-08-30%20at%201.55.28%20PM.png)
 
 *Monitor your climbing journey with personalized stats and achievements*
 
