@@ -22,6 +22,9 @@ import {
   Line
 } from 'recharts';
 
+// Custom color palette - moved outside component to prevent re-creation
+const COLORS = ['#0D5C63', '#D19C1D', '#88BB92', '#C3423F'];
+
 export function StatsDashboard() {
   const [climbs, setClimbs] = useState<Climb[]>([]);
   const [, setGyms] = useState<Gym[]>([]);
@@ -118,14 +121,19 @@ export function StatsDashboard() {
     return acc;
   }, {} as Record<string, number>);
 
-  const gradeChartData = Object.entries(gradeDistribution)
-    .filter(([grade]) => gradeValues[grade] !== undefined) // Only include grades that exist in current system
-    .sort(([a], [b]) => (gradeValues[a] || 0) - (gradeValues[b] || 0)) // Sort first
-    .map(([grade, count], index) => ({ 
-      grade, 
-      count, 
-      fill: COLORS.length > 0 ? COLORS[index % COLORS.length] : '#0D5C63' // Fallback color
-    }));
+  // Process grade chart data safely
+  const gradeEntries = Object.entries(gradeDistribution || {})
+    .filter(([grade]) => gradeValues[grade] !== undefined);
+  
+  const sortedGradeEntries = gradeEntries.sort(([a], [b]) => 
+    (gradeValues[a] || 0) - (gradeValues[b] || 0)
+  );
+  
+  const gradeChartData = sortedGradeEntries.map(([grade, count], index) => ({
+    grade,
+    count,
+    fill: COLORS[index % COLORS.length] || COLORS[0]
+  }));
 
   // Route type analysis
   const routeTypeStats = completedClimbs.reduce((acc, climb) => {
@@ -133,22 +141,15 @@ export function StatsDashboard() {
     return acc;
   }, {} as Record<string, number>);
 
-  const routeTypeChartData = Object.entries(routeTypeStats).map(([type, count]) => {
+  const routeTypeChartData = Object.entries(routeTypeStats || {}).map(([type, count]) => {
     const typeInfo = ROUTE_TYPES.find(rt => rt.value === type);
     return {
       name: typeInfo?.label || type,
       value: count,
-      percentage: Math.round((count / completedClimbs.length) * 100)
+      percentage: completedClimbs.length > 0 ? Math.round((count / completedClimbs.length) * 100) : 0
     };
   });
 
-  // Custom color palette
-  const COLORS = ['#0D5C63', '#D19C1D', '#88BB92', '#C3423F'];
-  
-  // Safety check for colors
-  if (COLORS.length === 0) {
-    console.error('COLORS array is empty');
-  }
 
   // Monthly progress
   const monthlyData = climbs.reduce((acc, climb) => {
@@ -166,7 +167,7 @@ export function StatsDashboard() {
     return acc;
   }, {} as Record<string, { month: string; total: number; completed: number; flashed: number }>);
 
-  const monthlyChartData = Object.values(monthlyData).slice(-6); // Last 6 months
+  const monthlyChartData = Object.values(monthlyData || {}).slice(-6); // Last 6 months
 
   return (
     <div className="p-4 space-y-4">
