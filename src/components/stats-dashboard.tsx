@@ -91,9 +91,20 @@ export function StatsDashboard() {
   }, {} as Record<string, number>);
   
   const highestGrade = completedGrades.length > 0 
-    ? completedGrades.reduce((highest, current) => 
-        (gradeValues[current] || 0) > (gradeValues[highest] || 0) ? current : highest
-      )
+    ? completedGrades.reduce((highest, current) => {
+        const currentValue = gradeValues[current];
+        const highestValue = gradeValues[highest];
+        // Only compare if both grades exist in our current grade system
+        if (currentValue !== undefined && highestValue !== undefined) {
+          return currentValue > highestValue ? current : highest;
+        }
+        // If current grade exists but highest doesn't, use current
+        if (currentValue !== undefined && highestValue === undefined) {
+          return current;
+        }
+        // Otherwise keep highest
+        return highest;
+      })
     : 'None';
 
   // Recent activity (last 7 days)
@@ -108,6 +119,7 @@ export function StatsDashboard() {
   }, {} as Record<string, number>);
 
   const gradeChartData = Object.entries(gradeDistribution)
+    .filter(([grade]) => gradeValues[grade] !== undefined) // Only include grades that exist in current system
     .map(([grade, count], index) => ({ 
       grade, 
       count, 
