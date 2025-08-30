@@ -253,7 +253,7 @@ export function StatsDashboard() {
                     fill="#8884d8"
                     dataKey="value"
                     label={({ name, percentage }) => `${name}: ${percentage}%`}
-                    labelLine={{ stroke: 'white', strokeWidth: 1 }}
+                    labelLine={false}
                   >
                     {routeTypeChartData.map((entry, index) => (
                       <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
