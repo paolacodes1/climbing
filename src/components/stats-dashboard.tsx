@@ -253,9 +253,10 @@ export function StatsDashboard() {
                     fill="#8884d8"
                     dataKey="value"
                     label={({ name, percentage, cx, cy, midAngle }) => {
+                      if (!midAngle || !cx || !cy) return null;
+                      
                       const RADIAN = Math.PI / 180;
                       const radius = 100;
-                      const x = cx + radius * Math.cos(-midAngle * RADIAN);
                       const y = cy + radius * Math.sin(-midAngle * RADIAN);
                       
                       // Force labels to top or bottom only
