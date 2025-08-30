@@ -174,40 +174,40 @@ export function StatsDashboard() {
       {/* Summary Cards */}
       <div className="grid grid-cols-2 gap-4">
         <Card>
-          <CardHeader className="pb-1">
+          <CardHeader className="pb-0">
             <CardTitle className="text-sm font-medium text-muted-foreground">Total Climbs</CardTitle>
           </CardHeader>
-          <CardContent className="pt-1">
+          <CardContent className="pt-0">
             <div className="text-2xl font-bold">{totalClimbs}</div>
             <Badge className="mt-1 bg-primary text-primary-foreground">{recentClimbs.length} this week</Badge>
           </CardContent>
         </Card>
 
         <Card>
-          <CardHeader className="pb-1">
+          <CardHeader className="pb-0">
             <CardTitle className="text-sm font-medium text-muted-foreground">Success Rate</CardTitle>
           </CardHeader>
-          <CardContent className="pt-1">
+          <CardContent className="pt-0">
             <div className="text-2xl font-bold">{successRate}%</div>
             <Progress value={successRate} className="mt-2" />
           </CardContent>
         </Card>
 
         <Card>
-          <CardHeader className="pb-1">
+          <CardHeader className="pb-0">
             <CardTitle className="text-sm font-medium text-muted-foreground">Highest Grade</CardTitle>
           </CardHeader>
-          <CardContent className="pt-1">
+          <CardContent className="pt-0">
             <div className="text-2xl font-bold">{highestGrade}</div>
             <Badge variant="outline" className="mt-1">Completed</Badge>
           </CardContent>
         </Card>
 
         <Card>
-          <CardHeader className="pb-1">
+          <CardHeader className="pb-0">
             <CardTitle className="text-sm font-medium text-muted-foreground">Flash Rate</CardTitle>
           </CardHeader>
-          <CardContent className="pt-1">
+          <CardContent className="pt-0">
             <div className="text-2xl font-bold">{flashRate}%</div>
             <Badge className="mt-1 bg-primary text-primary-foreground">{flashedClimbs.length} flashes</Badge>
           </CardContent>

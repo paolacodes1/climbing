@@ -6,17 +6,17 @@
   "background_color": "#1a1a1a",
   "display": "standalone",
   "orientation": "portrait",
-  "scope": "/climbing/",
-  "start_url": "/climbing/",
+  "scope": "/",
+  "start_url": "/",
   "icons": [
     {
-      "src": "/climbing/icons/icon-192x192.png",
+      "src": "/icons/icon-192x192.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "maskable any"
     },
     {
-      "src": "/climbing/icons/icon-512x512.png",
+      "src": "/icons/icon-512x512.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "maskable any"
@@ -36,10 +36,10 @@
       "name": "Log Climb",
       "short_name": "Log",
       "description": "Quickly log a new climb",
-      "url": "/climbing/log",
+      "url": "/log",
       "icons": [
         {
-          "src": "/climbing/icons/icon-192x192.png",
+          "src": "/icons/icon-192x192.png",
           "sizes": "192x192"
         }
       ]
