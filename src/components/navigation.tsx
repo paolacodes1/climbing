@@ -1,20 +1,20 @@
 'use client';
 
 import { useRouter, usePathname } from 'next/navigation';
-import { 
-  PencilIcon, 
-  ChartBarIcon, 
-  BuildingOffice2Icon, 
-  UsersIcon, 
-  UserIcon 
+import {
+  PencilIcon,
+  ChartBarIcon,
+  CalendarIcon,
+  BuildingOffice2Icon,
+  UserIcon
 } from '@heroicons/react/24/outline';
 import { cn } from '@/lib/utils';
 
 const tabs = [
-  { id: 'log', label: 'Log Climbs', icon: PencilIcon, path: '/log' },
+  { id: 'log', label: 'Log', icon: PencilIcon, path: '/log' },
+  { id: 'history', label: 'History', icon: CalendarIcon, path: '/history' },
   { id: 'progress', label: 'Progress', icon: ChartBarIcon, path: '/progress' },
   { id: 'gyms', label: 'Gyms', icon: BuildingOffice2Icon, path: '/gyms' },
-  { id: 'community', label: 'Community', icon: UsersIcon, path: '/community' },
   { id: 'profile', label: 'Profile', icon: UserIcon, path: '/profile' },
 ];
 

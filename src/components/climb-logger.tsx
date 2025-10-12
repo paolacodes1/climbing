@@ -8,11 +8,13 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import { Badge } from '@/components/ui/badge';
 import { Textarea } from '@/components/ui/textarea';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
-import { InformationCircleIcon } from '@heroicons/react/24/outline';
+import { InformationCircleIcon, PencilSquareIcon } from '@heroicons/react/24/outline';
 import { ROUTE_TYPES, WALL_ANGLES, HOLD_TYPES, GRADES } from '@/types/climb';
 import { db } from '@/lib/db';
 import { useBoulderingStore } from '@/lib/store';
 import { Climb } from '@/types/climb';
+import { PhotoCapture } from '@/components/photo-capture';
+import { PhotoAnnotate } from '@/components/photo-annotate';
 
 export function ClimbLogger() {
   const [formData, setFormData] = useState({
@@ -24,8 +26,10 @@ export function ClimbLogger() {
     wallAngle: '',
     holdTypes: [] as string[],
     notes: '',
+    photoUrl: '',
   });
 
+  const [showAnnotate, setShowAnnotate] = useState(false);
   const { selectedGym, addClimbToSession } = useBoulderingStore();
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -58,6 +62,7 @@ export function ClimbLogger() {
         wallAngle: '',
         holdTypes: [],
         notes: '',
+        photoUrl: '',
       });
     } catch (error) {
       console.error('Error saving climb:', error);
@@ -75,15 +80,16 @@ export function ClimbLogger() {
   };
 
   return (
-    <div className="p-4 space-y-6">
-      <Card>
-        <CardHeader>
-          <CardTitle>
-            Log New Climb
-          </CardTitle>
-        </CardHeader>
-        <CardContent>
-          <form onSubmit={handleSubmit} className="space-y-4">
+    <>
+      <div className="p-4 space-y-6">
+        <Card>
+          <CardHeader>
+            <CardTitle>
+              Log New Climb
+            </CardTitle>
+          </CardHeader>
+          <CardContent>
+            <form onSubmit={handleSubmit} className="space-y-4">
             <div>
               <label className="block text-sm font-medium mb-1">Route Name</label>
               <Input
@@ -236,6 +242,23 @@ export function ClimbLogger() {
               />
             </div>
 
+            <PhotoCapture
+              onPhotoCapture={(photo) => setFormData(prev => ({ ...prev, photoUrl: photo }))}
+              existingPhoto={formData.photoUrl}
+            />
+
+            {formData.photoUrl && (
+              <Button
+                type="button"
+                variant="outline"
+                className="w-full"
+                onClick={() => setShowAnnotate(true)}
+              >
+                <PencilSquareIcon className="w-5 h-5 mr-2" />
+                Annotate Photo
+              </Button>
+            )}
+
             <Button type="submit" className="w-full">
               Log Climb
             </Button>
@@ -243,5 +266,18 @@ export function ClimbLogger() {
         </CardContent>
       </Card>
     </div>
+
+    {showAnnotate && formData.photoUrl && (
+      <PhotoAnnotate
+        photo={formData.photoUrl}
+        isOpen={showAnnotate}
+        onSave={(annotatedPhoto) => {
+          setFormData(prev => ({ ...prev, photoUrl: annotatedPhoto }));
+          setShowAnnotate(false);
+        }}
+        onCancel={() => setShowAnnotate(false)}
+      />
+    )}
+  </>
   );
 }
