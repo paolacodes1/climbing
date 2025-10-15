@@ -18,7 +18,10 @@ export function PhotoCapture({ onPhotoCapture, existingPhoto }: PhotoCaptureProp
   const webcamRef = useRef<Webcam>(null);
 
   const capture = useCallback(() => {
-    const imageSrc = webcamRef.current?.getScreenshot();
+    const imageSrc = webcamRef.current?.getScreenshot({
+      width: 1920,
+      height: 1080,
+    });
     if (imageSrc) {
       setCapturedImage(imageSrc);
     }
@@ -128,10 +131,10 @@ export function PhotoCapture({ onPhotoCapture, existingPhoto }: PhotoCaptureProp
                     screenshotFormat="image/jpeg"
                     videoConstraints={{
                       facingMode: facingMode,
-                      width: 1280,
-                      height: 1920,
+                      aspectRatio: 9 / 16,
                     }}
                     className="w-full h-full object-cover"
+                    screenshotQuality={0.95}
                   />
                 </div>
                 <div className="flex gap-2">
