@@ -42,5 +42,9 @@
     "tailwindcss": "^4",
     "tw-animate-css": "^1.3.7",
     "typescript": "^5"
+  },
+  "overrides": {
+    "postcss": "^8.5.32",
+    "serialize-javascript": "^7.1.3"
   }
 }
